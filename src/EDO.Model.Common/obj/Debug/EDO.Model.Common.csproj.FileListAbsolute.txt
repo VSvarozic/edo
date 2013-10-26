@@ -1,0 +1,4 @@
+D:\Projects\GitHub\edo\src\EDO.Model.Common\bin\Debug\EDO.Model.Common.dll
+D:\Projects\GitHub\edo\src\EDO.Model.Common\bin\Debug\EDO.Model.Common.pdb
+D:\Projects\GitHub\edo\src\EDO.Model.Common\obj\Debug\EDO.Model.Common.dll
+D:\Projects\GitHub\edo\src\EDO.Model.Common\obj\Debug\EDO.Model.Common.pdb

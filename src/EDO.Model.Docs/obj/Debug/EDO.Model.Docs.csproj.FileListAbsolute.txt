@@ -1,0 +1,5 @@
+D:\Projects\GitHub\edo\src\EDO.Model.Docs\bin\Debug\EDO.Model.Docs.dll
+D:\Projects\GitHub\edo\src\EDO.Model.Docs\bin\Debug\EDO.Model.Docs.pdb
+D:\Projects\GitHub\edo\src\EDO.Model.Docs\obj\Debug\EDO.Model.Docs.csprojResolveAssemblyReference.cache
+D:\Projects\GitHub\edo\src\EDO.Model.Docs\obj\Debug\EDO.Model.Docs.dll
+D:\Projects\GitHub\edo\src\EDO.Model.Docs\obj\Debug\EDO.Model.Docs.pdb
