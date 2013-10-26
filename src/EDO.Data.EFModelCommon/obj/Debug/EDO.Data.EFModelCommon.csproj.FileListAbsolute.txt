@@ -1,9 +1,0 @@
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EDO.Data.EFModelCommon.dll.config
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EDO.Data.EFModelCommon.dll
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EDO.Data.EFModelCommon.pdb
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EntityFramework.dll
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EntityFramework.SqlServer.dll
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EntityFramework.xml
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\bin\Debug\EntityFramework.SqlServer.xml
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\obj\Debug\EDO.Data.EFModelCommon.dll
-D:\Projects\GitHub\edo\src\EDO.Data.EFModelCommon\obj\Debug\EDO.Data.EFModelCommon.pdb

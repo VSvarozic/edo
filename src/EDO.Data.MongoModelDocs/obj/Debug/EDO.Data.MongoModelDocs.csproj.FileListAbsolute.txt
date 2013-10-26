@@ -1,9 +1,0 @@
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\bin\Debug\EDO.Data.MongoModelDocs.dll
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\bin\Debug\EDO.Data.MongoModelDocs.pdb
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\bin\Debug\MongoDB.Bson.dll
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\bin\Debug\MongoDB.Driver.dll
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\bin\Debug\MongoDB.Bson.xml
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\bin\Debug\MongoDB.Driver.xml
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\obj\Debug\EDO.Data.MongoModelDocs.csprojResolveAssemblyReference.cache
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\obj\Debug\EDO.Data.MongoModelDocs.dll
-D:\Projects\GitHub\edo\src\EDO.Data.MongoModelDocs\obj\Debug\EDO.Data.MongoModelDocs.pdb
