@@ -5155,6 +5155,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDO.Data.EFModelCommon\EDO.Data.EFModelCommon.csproj">
+      <Project>{17224248-3AA9-43C0-8C21-8C03D7C0D673}</Project>
+      <Name>EDO.Data.EFModelCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EDO.Model.Common\EDO.Model.Common.csproj">
+      <Project>{FF30E6FF-3651-4B91-8B44-DC1389DD239A}</Project>
+      <Name>EDO.Model.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

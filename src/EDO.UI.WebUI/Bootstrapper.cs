@@ -1,5 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
+using EDO.Data.EFModelCommon.Repos;
+using EDO.Model.Common.Abstract;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
 
@@ -28,6 +30,7 @@ namespace EDO.UI.WebUI
 
         public static void RegisterTypes(IUnityContainer container)
         {
+            container.RegisterType<IUserProfilesRepository, EFUserProfilesRepository>();
         }
     }
 }
