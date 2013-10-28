@@ -143,11 +143,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="scripts\app.js" />
-    <Content Include="scripts\app\model\_common\Servers.js" />
     <Content Include="scripts\app\view\Viewport.js" />
-    <Content Include="scripts\app\view\_common\AuthInfo.js" />
-    <Content Include="scripts\app\view\_common\Brand.js" />
-    <Content Include="scripts\app\view\_common\ServersTree.js" />
     <Content Include="scripts\extjs421\bootstrap.js" />
     <Content Include="scripts\extjs421\build.xml" />
     <Content Include="scripts\extjs421\builds\ext-all-rtl-sandbox-debug-w-comments.js" />
@@ -5176,6 +5172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="scripts\app\model\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EDO.Data.EFModelCommon\EDO.Data.EFModelCommon.csproj">

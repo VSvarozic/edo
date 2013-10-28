@@ -1,5 +1,5 @@
 ﻿Ext.application({
-    name: 'MDBAdmin',
+    name: 'EDO',
     autoCreateViewport: true,
     appFolder: '/scripts/app',
 

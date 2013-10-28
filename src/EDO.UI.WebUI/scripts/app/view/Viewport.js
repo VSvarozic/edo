@@ -1,10 +1,10 @@
-﻿Ext.define('MDBAdmin.view.Viewport', {
+﻿Ext.define('EDO.view.Viewport', {
     extend: 'Ext.container.Viewport',
 
     requires: [
-        'MDBAdmin.view._common.Brand',
-        'MDBAdmin.view._common.AuthInfo',
-        'MDBAdmin.view._common.ServersTree'
+        'EDO.view._common.Brand',
+        'EDO.view._common.AuthInfo',
+        'EDO.view._common.ServersTree'
     ],
 
     layout: 'fit',
@@ -19,12 +19,12 @@
                     height: 80,
                     items: [
                         {
-                            xtype: 'mdba-Brand',
+                            xtype: 'edo-Brand',
                             height: 70,
                             flex: 0.7
                         },
                         {
-                            xtype: 'mdba-AuthInfo',
+                            xtype: 'edo-AuthInfo',
                             height: 70,
                             flex: 0.3
                         }
@@ -69,7 +69,7 @@
                                 minHeight: 200,
                                 collapsible: false,
                                 items: {
-                                    xtype: 'mdba-ServersTree'
+                                    xtype: 'edo-ServersTree'
                                 }
                             },
                             {
