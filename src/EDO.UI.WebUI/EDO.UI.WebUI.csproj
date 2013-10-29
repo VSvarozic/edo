@@ -141,9 +141,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\icons\large\lock.png" />
+    <Content Include="Content\images\icons\medium\close.png" />
+    <Content Include="Content\images\icons\medium\login.png" />
+    <Content Include="Content\images\icons\small\collapse.png" />
+    <Content Include="Content\images\icons\small\expand.png" />
+    <Content Include="Content\images\icons\small\flags\us.gif" />
+    <Content Include="Content\images\icons\small\locked.png" />
+    <Content Include="Content\images\icons\small\logout.png" />
+    <Content Include="Content\images\icons\small\warning.png" />
+    <Content Include="Content\images\loader.gif" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\app\lib\ux\app\RoutedApplication.js" />
+    <Content Include="scripts\app\lib\ux\app\RoutedController.js" />
+    <Content Include="scripts\app\lib\ux\router\Route.js" />
+    <Content Include="scripts\app\lib\ux\router\Router.js" />
     <Content Include="scripts\app\view\Viewport.js" />
+    <Content Include="scripts\config\development.js" />
+    <Content Include="scripts\config\environment.js" />
+    <Content Include="scripts\config\production.js" />
+    <Content Include="scripts\config\router.js" />
     <Content Include="scripts\extjs421\bootstrap.js" />
     <Content Include="scripts\extjs421\build.xml" />
     <Content Include="scripts\extjs421\builds\ext-all-rtl-sandbox-debug-w-comments.js" />

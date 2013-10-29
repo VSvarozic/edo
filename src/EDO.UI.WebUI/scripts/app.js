@@ -1,9 +1,14 @@
-﻿Ext.application({
-    name: 'EDO',
-    autoCreateViewport: true,
-    appFolder: '/scripts/app',
-
-    launch: function () {
-
-    }
+﻿Ext.require('Ext.ux.app.RoutedApplication', function() {
+    App = Ext.create('Ext.ux.app.RoutedApplication', {        
+        appFolder: '/scripts/app',
+        name: 'App',
+        controllers: [
+        ],
+        requires: [
+        ],
+        
+        launch: function() {
+            
+        }
+    });
 });
