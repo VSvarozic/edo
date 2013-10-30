@@ -8,11 +8,11 @@ Ext.define('Ext.ux.app.RoutedApplication', {
 
     name: 'RoutedApp',
 
-	constructor: function(config) {
+    constructor: function (config) {
 		this._layouts = new Ext.util.MixedCollection();				
 		this.callParent(arguments);		
 	},
-	onBeforeLaunch: function() {
+	onBeforeLaunch: function () {
 		// Register this app with the Router
 		Ext.Router.registerApp(this);
 		Ext.Router.on('beforedispatch', this._onBeforeDispatch, this);

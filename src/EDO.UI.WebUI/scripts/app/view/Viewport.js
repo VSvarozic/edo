@@ -2,101 +2,50 @@
     extend: 'Ext.container.Viewport',
 
     requires: [
-        'EDO.view._common.Brand',
-        'EDO.view._common.AuthInfo',
-        'EDO.view._common.ServersTree'
+        'EDO.view.layout.NorthPanel',
+        'EDO.view.layout.ContentPanel',
+        'EDO.view.layout.SouthPanel'
     ],
 
-    layout: 'fit',
+    layout: 'border',
+    autoWidth: true,
+    autoHeight: true,
 
     initComponent: function () {
-        this.items = {
-            xtype: 'panel',
-            dockedItems: [
-                {
-                    dock: 'top',
-                    xtype: 'toolbar',
-                    height: 80,
-                    items: [
-                        {
-                            xtype: 'edo-Brand',
-                            height: 70,
-                            flex: 0.7
-                        },
-                        {
-                            xtype: 'edo-AuthInfo',
-                            height: 70,
-                            flex: 0.3
-                        }
-                    ]
-                },
-                {
-                    dock: 'bottom',
-                    xtype: 'toolbar',
-                    height: 50,
-                    items: [
-                    ]
-                }
-            ],
-            layout: {
-                type: 'fit'
-            },
-            items: {
-                xtype: 'panel',
-                layout: {
-                    type: 'border'
-                },
-                bodyBorder: false,
-                border: false,
-                defaults: {
-                    collapsible: true,
-                    split: true                    
-                },
-                items: [
-                    {
-                        region: 'west',
-                        width: 275,
-                        minWidth: 250,
-                        maxWidth: 550,
-                        header :false,
-                        layout: {
-                            type: 'border'
-                        },
-                        items: [
-                            {
-                                title: 'Список серверов',
-                                region: 'center',
-                                minHeight: 200,
-                                collapsible: false,
-                                items: {
-                                    xtype: 'edo-ServersTree'
-                                }
-                            },
-                            {
-                                title: 'Info panel',
-                                region: 'south',
-                                minHeight: 100,
-                                split: true,
-                                collapsible: true,
-                                items: {
-                                    xtype: 'component',
-                                    layout: 'fit',
-                                    html: 'Some info will be here'
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        title: 'Main Content',
-                        collapsible: false,
-                        region: 'center',
-                        margins: '0 0 0 0',
-                        bodyPadding: 15,
-                        html: 'Main Page This is where the main content would go'
-                    }
-                ]
-            }
+        this.ids = {
+            northPanelId: Ext.id(),
+            centerPanelId: Ext.id(),
+            southPanelId: Ext.id(),
+            layoutCenterContainerId: Ext.id()
         };
+
+        Ext.apply(this, {
+            items: [
+                {
+                    region: 'north',
+                    border: false,
+                    id: this.ids.northPanelId,
+                    xtype: 'NorthPanel'
+                },
+                {
+                    region: 'center',
+                    autoScroll: true,
+                    border: false,
+                    id: this.ids.layoutCenterContainerId,
+                    items: [
+                      {
+                          xtype: 'ContentPanel',
+                          id: this.ids.centerPanelId
+                      }
+                    ]
+                },
+                {
+                    region: 'south',
+                    xtype: 'SouthPanel',
+                    id: this.ids.southPanelId
+                }
+            ]
+        });
 
         this.callParent(arguments);
     }

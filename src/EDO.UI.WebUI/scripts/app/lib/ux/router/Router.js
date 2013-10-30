@@ -23,7 +23,7 @@ Ext.define('Ext.ux.router.Router', {
 	* @author Chris Scott
 	* @param {Ext.app.Application} the application instance
 	*/
-	registerApp: function(app) {
+    registerApp: function (app) {
 		this.app = app;
 	},
 	

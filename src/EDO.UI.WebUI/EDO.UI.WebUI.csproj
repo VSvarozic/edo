@@ -141,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SiteMenu.xml" />
     <Content Include="Content\images\icons\large\lock.png" />
     <Content Include="Content\images\icons\medium\close.png" />
     <Content Include="Content\images\icons\medium\login.png" />
@@ -155,10 +156,21 @@
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\app\controller\Base.js" />
+    <Content Include="scripts\app\controller\Dashboard.js" />
+    <Content Include="scripts\app\controller\Documents.js" />
+    <Content Include="scripts\app\view\documents\Index.js" />
+    <Content Include="scripts\app\view\documents\Create.js" />
+    <Content Include="scripts\app\view\documents\Export.js" />
+    <Content Include="scripts\app\view\_common\UserMenu.js" />
     <Content Include="scripts\app\lib\ux\app\RoutedApplication.js" />
     <Content Include="scripts\app\lib\ux\app\RoutedController.js" />
     <Content Include="scripts\app\lib\ux\router\Route.js" />
     <Content Include="scripts\app\lib\ux\router\Router.js" />
+    <Content Include="scripts\app\view\dashboard\Index.js" />
+    <Content Include="scripts\app\view\layout\ContentPanel.js" />
+    <Content Include="scripts\app\view\layout\NorthPanel.js" />
+    <Content Include="scripts\app\view\layout\SouthPanel.js" />
     <Content Include="scripts\app\view\Viewport.js" />
     <Content Include="scripts\config\development.js" />
     <Content Include="scripts\config\environment.js" />
@@ -4696,6 +4708,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\SiteMenuController.cs" />
     <Compile Include="Controllers\Api\TestCtrlController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -5191,7 +5204,7 @@
     <Content Include="_AppStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Models\Menu\" />
     <Folder Include="scripts\app\model\" />
   </ItemGroup>
   <ItemGroup>

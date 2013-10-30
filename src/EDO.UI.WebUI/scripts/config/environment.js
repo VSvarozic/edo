@@ -2,8 +2,9 @@ Ext.Loader.setConfig({
     enabled:true,
     disableCaching:true,
     paths:{
-        'Ext.ux':'/scripts/app/lib/ux',
-        'Ext.ux.app':'/scripts/app/lib/ux/app'
+        'Ext.ux': 'scripts/app/lib/ux',
+        'EDO': 'scripts/app/',
+        'EDO.core': 'scripts/app/lib/'
     }
 });
 
