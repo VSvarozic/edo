@@ -74,6 +74,7 @@
       <HintPath>..\..\extlib\SimpleMembershipModule.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -141,7 +142,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SiteMenu.xml" />
+    <Content Include="App_Data\SiteMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\images\icons\large\lock.png" />
     <Content Include="Content\images\icons\medium\close.png" />
     <Content Include="Content\images\icons\medium\login.png" />
@@ -4716,6 +4719,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\MenuModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -5204,7 +5208,6 @@
     <Content Include="_AppStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Menu\" />
     <Folder Include="scripts\app\model\" />
   </ItemGroup>
   <ItemGroup>
