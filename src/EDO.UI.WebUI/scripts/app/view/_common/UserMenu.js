@@ -2,9 +2,12 @@
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.edo-usermenu',
     
+    store: 'EDO.model.Menu',
+    
     menus: [],
 
     initComponent: function () {
+        
         var me = this,
             menuList = [];
 
@@ -20,11 +23,12 @@
 
         me.callParent(arguments);
     },
-
-
+    
     _buildMenuTree: function (inList) {
         var outList = [];
 
+        console.log(this.store);
+        
         if (!inList || inList.length === 0) return;
 
         for (var i in inList) {
@@ -36,7 +40,7 @@
                     menu: {
                         items: this._buildMenuTree(item.items)
                     }
-                })
+                });
             } else {
                 outList.push({
                     text: item.text,

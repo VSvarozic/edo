@@ -45,7 +45,7 @@ namespace EDO.UI.WebUI.Models
             {
                 var itemRoles = item.Element("roles").Elements("role");
 
-                if(itemRoles.Count() == 0 || !itemRoles.Any(p => p.Value == "All" || _user.IsInRole(p.Value)) )
+                if(!itemRoles.Any(p => p.Value == "All" || _user.IsInRole(p.Value)) )
                 {
                     continue;
                 }
@@ -74,10 +74,7 @@ namespace EDO.UI.WebUI.Models
                     };
                 }
 
-                if (newItem != null)
-                {
-                    result.Add(newItem);
-                }
+                result.Add(newItem);
             }
 
             return result;
