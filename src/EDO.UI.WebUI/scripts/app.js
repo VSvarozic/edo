@@ -1,5 +1,4 @@
-﻿
-Ext.require('Ext.ux.app.RoutedApplication', function () {
+﻿Ext.require('Ext.ux.app.RoutedApplication', function () {
     App = Ext.create('Ext.ux.app.RoutedApplication', {        
         
         name: 'EDO',
@@ -14,8 +13,6 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
             'Dashboard',
             'Documents'
         ],
-              
-        
         
         launch: function() {
             var me = this;
@@ -38,8 +35,6 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
                 Ext.History.add('dashboard', true);
             }
 
-
-            // Инициализируем Menu
             this.initMenu();
         },
 
@@ -65,41 +60,9 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
                 remove: true
             });
         },
-        initUserAcl: function() {
-            return [
-                {
-                    text: 'Главная',
-                    controller: 'dashboard',
-                    action: 'index'
-                },
-                {
-                    text: 'Документы',
-                    items: [
-                        {
-                            text: 'Главная 23',
-                            controller: 'documents',
-                            action: 'index'
-                        },
-                        {
-                            text: 'Главная 45',
-                            controller: 'documents',
-                            action: 'index22'
-                        },
-                        {
-                            text: 'Главная 65',
-                            controller: 'documents',
-                            action: 'index23'
-                        }
-                    ]
-                }
-            ];
-        },
         initMenu: function () {            
             var northpanel = Ext.getCmp(this.viewport.ids.northPanelId),
-                menuList = this.initUserAcl(),
-                topMenu = Ext.create('EDO.view._common.UserMenu', {
-                            menus: menuList
-                          });
+                topMenu = Ext.create('EDO.view._common.UserMenu', {});
 
             northpanel.insert(northpanel.items.getCount(), topMenu);
 

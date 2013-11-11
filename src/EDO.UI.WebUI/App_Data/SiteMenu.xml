@@ -28,9 +28,9 @@
           </roles>
         </item>
         <item>
-          <text>Список</text>
+          <text>Список документов</text>
           <controller>documents</controller>
-          <action>indexAdmin</action>
+          <action>allDocs</action>
           <target>_self</target>
           <roles>
             <role>Administrator</role>
@@ -43,15 +43,6 @@
           <target>_self</target>
           <roles>
             <role>Administrator</role>
-            <role>User</role>
-          </roles>
-        </item>
-        <item>
-          <text>Экспорт</text>
-          <controller>documents</controller>
-          <action>export</action>
-          <target>_self</target>
-          <roles>            
             <role>User</role>
           </roles>
         </item>

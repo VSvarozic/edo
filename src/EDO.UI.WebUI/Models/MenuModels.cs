@@ -84,14 +84,22 @@ namespace EDO.UI.WebUI.Models
     [DataContract(Name = "Menu", Namespace = "")]
     public class Menu
     {
-        [DataMember(Name = "Items")]
+        [DataMember(Name = "MenuItems")]
         public List<MenuItem> Items { get; set; }
+        [DataMember(Name = "TotalItems")]
+        public int TotalItems
+        {
+            get
+            {
+                return Items.Count();
+            }
+        }
     }
 
-    [DataContract(Name = "Item", Namespace = "")]
+    [DataContract(Name = "MenuItem", Namespace = "")]
     public class MenuItem
     {
-        [DataMember(EmitDefaultValue=false)]
+        [DataMember(EmitDefaultValue = false)]
         public string Text { get; set; }
         [DataMember(EmitDefaultValue = false)]
         public string Controller { get; set; }
@@ -99,7 +107,7 @@ namespace EDO.UI.WebUI.Models
         public string Action { get; set; }
         [DataMember(EmitDefaultValue = false)]
         public string Target { get; set; }
-        [DataMember(EmitDefaultValue = false)]
+        [DataMember(Name = "MenuItems", EmitDefaultValue = false)]
         public List<MenuItem> Items { get; set; }
     }
 }

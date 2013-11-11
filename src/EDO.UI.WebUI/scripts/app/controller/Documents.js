@@ -3,15 +3,14 @@
     views: [
         'documents.Index',
         'documents.Create',
-        'documents.Export'
+        'documents.AllDocs'
     ],
 
+    allDocs: function(request) {
+        this.render("workspace", this["get" + this.id + "AllDocsView"]());
+    },
     create: function (request) {
         this.render("workspace", this["get" + this.id + "CreateView"]());
-    },
-
-    export: function (request) {
-        this.render("workspace", this["get" + this.id + "ExportView"]());
     },
 
     hasRights: function () {

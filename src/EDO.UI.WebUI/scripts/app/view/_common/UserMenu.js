@@ -1,63 +1,77 @@
 ﻿Ext.define('EDO.view._common.UserMenu', {
     extend: 'Ext.toolbar.Toolbar',
     alias: 'widget.edo-usermenu',
-    
-    store: 'EDO.model.Menu',
-    
-    menus: [],
+    requires: [
+        'EDO.store.MenuItems',
+        'EDO.model.MenuItem'
+    ],
 
     initComponent: function () {
-        
         var me = this,
             menuList = [];
 
-        menuList = me._buildMenuTree(me.menus);
+        me._readMenuFromStore();
 
-        Ext.apply(me, {
+        Ext.apply(this, {
             xtype: 'toolbar',
             autoHeight: true,
+            cls: 'user-menu-bar',
             width: 'auto',
-            items: menuList
+            items: []
         });
-
 
         me.callParent(arguments);
     },
-    
-    _buildMenuTree: function (inList) {
-        var outList = [];
 
-        console.log(this.store);
+    _readMenuFromStore: function () {
+        var tb = this;
+
+        var store = new EDO.store.MenuItems();
+        store.on('load', function (storeref, records, success) {
+            if (success) {
+                menuList = this._buildMenuTree(storeref);
+
+                for (var i in menuList) {
+                    this.add(menuList[i]);
+                }
+            }
+        }, tb);
+    },
+
+    _buildMenuTree: function (store) {
         
-        if (!inList || inList.length === 0) return;
+        var me = this,
+            outList = [];
 
-        for (var i in inList) {
-            var item = inList[i];
+        if (store.count() == 0) return;
 
-            if (item.items && item.items.length > 0) {
+        store.each(function (item) {
+            if (item.menuItems().count() > 0) {
                 outList.push({
-                    text: item.text,
+                    text: item.get('text'),
                     menu: {
-                        items: this._buildMenuTree(item.items)
+                        xtype: 'menu',
+                        items: me._buildMenuTree(item.menuItems())
                     }
-                });
+                })
             } else {
                 outList.push({
-                    text: item.text,
-                    hrefTarget: '_self',
-                    href: this._buildMenuItemUrl(item)
+                    text: item.get('text'),
+                    hrefTarget: item.get('target'),
+                    href: me._buildMenuItemUrl(item.get('controller'), item.get('action'))
                 });
             }
-        }
 
+        }, me);
+        
         return outList;
     },
 
-    _buildMenuItemUrl: function (item) {
-        var url = '#' + item.controller;
+    _buildMenuItemUrl: function (controller, action) {
+        var url = '#' + controller;
 
-        if (item.action && item.action != 'index') {
-            url = url + '/' + item.action;
+        if (action && action != 'index') {
+            url = url + '/' + action;
         }
         return url;
     }

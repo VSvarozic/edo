@@ -3,7 +3,6 @@
 
     requires: [
         'EDO.view.layout.NorthPanel',
-        'EDO.view.layout.ContentPanel',
         'EDO.view.layout.SouthPanel'
     ],
 
@@ -14,7 +13,6 @@
     initComponent: function () {
         this.ids = {
             northPanelId: Ext.id(),
-            centerPanelId: Ext.id(),
             southPanelId: Ext.id(),
             layoutCenterContainerId: Ext.id()
         };
@@ -32,12 +30,10 @@
                     autoScroll: true,
                     border: false,
                     id: this.ids.layoutCenterContainerId,
-                    items: [
-                      {
-                          xtype: 'ContentPanel',
-                          id: this.ids.centerPanelId
-                      }
-                    ]
+                    xtype:'container', 
+                    layout:'card',
+                    stateful:true,
+                    stateId:'center-card'
                 },
                 {
                     region: 'south',
