@@ -1,4 +1,10 @@
-﻿Ext.require('Ext.ux.app.RoutedApplication', function () {
+﻿Ext.ns('EDO');
+Ext.ns('EDO.Core');
+Ext.ns('EDO.Core.User');
+
+Ext.require('EDO.model.UserInfo');
+
+Ext.require('Ext.ux.app.RoutedApplication', function () {
     App = Ext.create('Ext.ux.app.RoutedApplication', {        
         
         name: 'EDO',
@@ -11,11 +17,14 @@
         controllers: [
             'Base',
             'Dashboard',
-            'Documents'
+            'Documents',
+            'User'
         ],
         
         launch: function() {
             var me = this;
+
+            this.initCore();
 
             // create Viewport instance
             this.viewport = Ext.create('EDO.view.Viewport', {
@@ -34,8 +43,28 @@
             if (token == null) {
                 Ext.History.add('dashboard', true);
             }
-
+            
             this.initMenu();
+        },
+
+        initCore: function() {
+            EDO.Core.User = this.initUserInfo();
+        },
+
+        initUserInfo: function () {
+            var store = Ext.create('Ext.data.Store', {
+                model: 'EDO.model.UserInfo',
+                autoLoad: true,
+                autoSync: true
+            });
+
+            store.on('load', function (storeref, records, success) {
+                if (success) {
+                    return storeref.first();
+                }
+            }, this);
+
+            return null;
         },
 
         initDispatch: function () {

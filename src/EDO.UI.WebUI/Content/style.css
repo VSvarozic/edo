@@ -1,2 +1,18 @@
-﻿body {
+﻿/* Top UserInformer styles */
+.top-userInformer {
+  background-color: #FFFED4;
+  text-align: right;
+  border: solid 1px #E6E5BF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 4px;
+}
+
+.top-userInformer .top-userInformerItem {
+  padding: 0px 0px 2px 0px;
+  font-size: 10px;
+}
+
+.top-userInformer .top-userInformerItem:nth-child(1) {
+  font-weight: bold;
 }

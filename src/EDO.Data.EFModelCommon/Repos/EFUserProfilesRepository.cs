@@ -1,14 +1,21 @@
 ﻿using EDO.Model.Common.Abstract;
+using EDO.Model.Common.Entities;
+using System.Linq;
 
 namespace EDO.Data.EFModelCommon.Repos
 {
     public class EFUserProfilesRepository : IUserProfilesRepository
     {
-        public int Id { get; set; }
+        private EFDBContext _context;
 
         public EFUserProfilesRepository()
         {
-            Id = 200;
+            _context = new EFDBContext();
+        }
+
+        public UserProfile GetProfileById(int id)
+        {
+            return _context.UserProfiles.FirstOrDefault(up => up.Id == id);
         }
     }
 }

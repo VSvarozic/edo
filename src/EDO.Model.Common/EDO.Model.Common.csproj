@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IUserProfilesRepository.cs" />
+    <Compile Include="Entities\Business.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Office.cs" />
+    <Compile Include="Entities\UserPosition.cs" />
     <Compile Include="Entities\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

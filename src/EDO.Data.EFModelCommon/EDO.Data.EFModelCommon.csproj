@@ -57,6 +57,18 @@
     <Compile Include="Migrations\201310262058014_UserProfileCreateMigration.Designer.cs">
       <DependentUpon>201310262058014_UserProfileCreateMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311110943188_AddTablesBusOffPos.cs" />
+    <Compile Include="Migrations\201311110943188_AddTablesBusOffPos.Designer.cs">
+      <DependentUpon>201311110943188_AddTablesBusOffPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311110944596_RemoveNullableFromDates.cs" />
+    <Compile Include="Migrations\201311110944596_RemoveNullableFromDates.Designer.cs">
+      <DependentUpon>201311110944596_RemoveNullableFromDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311110947330_RenameDateFieldsMigration.cs" />
+    <Compile Include="Migrations\201311110947330_RenameDateFieldsMigration.Designer.cs">
+      <DependentUpon>201311110947330_RenameDateFieldsMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EFUserProfilesRepository.cs" />
@@ -77,6 +89,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201310262058014_UserProfileCreateMigration.resx">
       <DependentUpon>201310262058014_UserProfileCreateMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311110943188_AddTablesBusOffPos.resx">
+      <DependentUpon>201311110943188_AddTablesBusOffPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311110944596_RemoveNullableFromDates.resx">
+      <DependentUpon>201311110944596_RemoveNullableFromDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311110947330_RenameDateFieldsMigration.resx">
+      <DependentUpon>201311110947330_RenameDateFieldsMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

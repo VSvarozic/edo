@@ -6,6 +6,10 @@
     align: 'stretch',
     autoHeight: true,
 
+    requires: [
+        'EDO.view._common.TopUserInformer'
+    ],
+
     items: [
     {
         xtype: 'panel',
@@ -23,6 +27,9 @@
           },
           {
               xtype: 'tbfill'
+          },
+          {
+              xtype: 'edo-userinformer'
           }
         ]
     }

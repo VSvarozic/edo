@@ -1,7 +1,9 @@
-﻿namespace EDO.Model.Common.Abstract
+﻿using EDO.Model.Common.Entities;
+namespace EDO.Model.Common.Abstract
 {
     public interface IUserProfilesRepository
     {
-        int Id { get; set; }
+        UserProfile GetProfileById(int id);
+
     }
 }

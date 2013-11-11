@@ -1,7 +1,7 @@
 Ext.log = function() {
     console.log.apply(console, arguments);
 };
-
+Ext.log.warn = Ext.log;
 Ext.error = function() {
     console.error.apply(console, arguments);
 };
@@ -11,5 +11,5 @@ Ext.error = function() {
  * text is not yet translated
  */
 Ext.translationLog = function() {
-//    console.warn.apply(console, arguments);
+//   console.warn.apply(console, arguments);
 };

@@ -8,5 +8,8 @@ namespace EDO.Data.EFModelCommon
         public EFDBContext() : base("DefaultConnection") { }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Business> Businesses { get; set; }
+        public DbSet<Office> Offices { get; set; }
+        public DbSet<UserPosition> UserPositions { get; set; }
     }
 }

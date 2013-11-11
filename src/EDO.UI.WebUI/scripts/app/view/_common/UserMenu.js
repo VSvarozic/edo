@@ -11,7 +11,6 @@
             menuList = [];
 
         me._readMenuFromStore();
-
         Ext.apply(this, {
             xtype: 'toolbar',
             autoHeight: true,
@@ -26,11 +25,11 @@
     _readMenuFromStore: function () {
         var tb = this;
 
-        var store = new EDO.store.MenuItems();
+        var store = new EDO.store.MenuItems(); 
         store.on('load', function (storeref, records, success) {
             if (success) {
                 menuList = this._buildMenuTree(storeref);
-
+                
                 for (var i in menuList) {
                     this.add(menuList[i]);
                 }
