@@ -1,12 +1,8 @@
-﻿Ext.ns('EDO');
-Ext.ns('EDO.Core');
-Ext.ns('EDO.Core.User');
+﻿Ext.ns('Core');
+Ext.ns('Core.User');
 
-Ext.require('EDO.model.UserInfo');
-
-Ext.require('Ext.ux.app.RoutedApplication', function () {
-    App = Ext.create('Ext.ux.app.RoutedApplication', {        
-        
+Core.startApplication = function () {
+    App = Ext.create('Ext.ux.app.RoutedApplication', {
         name: 'EDO',
         appFolder: 'scripts/app',
 
@@ -20,8 +16,8 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
             'Documents',
             'User'
         ],
-        
-        launch: function() {
+
+        launch: function () {
             var me = this;
 
             this.initCore();
@@ -29,7 +25,7 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
             // create Viewport instance
             this.viewport = Ext.create('EDO.view.Viewport', {
                 controller: this
-            });
+            }, { single: true });
 
             var workspace = this.viewport.down('container[region=center]');
             this.addLayout('workspace', workspace);
@@ -43,28 +39,11 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
             if (token == null) {
                 Ext.History.add('dashboard', true);
             }
-            
+
             this.initMenu();
         },
 
-        initCore: function() {
-            EDO.Core.User = this.initUserInfo();
-        },
-
-        initUserInfo: function () {
-            var store = Ext.create('Ext.data.Store', {
-                model: 'EDO.model.UserInfo',
-                autoLoad: true,
-                autoSync: true
-            });
-
-            store.on('load', function (storeref, records, success) {
-                if (success) {
-                    return storeref.first();
-                }
-            }, this);
-
-            return null;
+        initCore: function () {
         },
 
         initDispatch: function () {
@@ -89,7 +68,7 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
                 remove: true
             });
         },
-        initMenu: function () {            
+        initMenu: function () {
             var northpanel = Ext.getCmp(this.viewport.ids.northPanelId),
                 topMenu = Ext.create('EDO.view._common.UserMenu', {});
 
@@ -97,4 +76,27 @@ Ext.require('Ext.ux.app.RoutedApplication', function () {
 
         }
     });
+};
+
+Ext.onReady(function () {
+    Ext.require([
+    'Ext.ux.app.RoutedApplication'
+    ],
+    function () {
+        Ext.Ajax.request({
+            url: '/api/coreapi',
+            method: 'GET',
+            success: function (response) {
+                var obj = Ext.decode(response.responseText)
+                if (obj.data) {
+                    Core.User = obj.data.userInfo;
+                }
+                
+                Core.startApplication();
+            },
+            failure: function () {
+
+            }
+        });
+    })
 });

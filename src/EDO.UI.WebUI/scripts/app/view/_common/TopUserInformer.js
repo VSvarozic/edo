@@ -1,14 +1,10 @@
-﻿Ext.ns('EDO');
-Ext.ns('EDO.Core');
-Ext.ns('EDO.Core.User');
+﻿
 
 Ext.define('EDO.view._common.TopUserInformer', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.edo-userinformer',
 
-    requires: [
-        
-    ],
+    requires: [],
 
     layout: {
         type: 'vbox',
@@ -26,7 +22,7 @@ Ext.define('EDO.view._common.TopUserInformer', {
     initComponent: function() {
         var me = this;
 
-        console.log(EDO.Core.User);
+        console.log(Core.User);
 
         Ext.apply(this, {
             
@@ -36,11 +32,11 @@ Ext.define('EDO.view._common.TopUserInformer', {
             },
             items: [
               {
-                  html: "Название компании",
+                  html: Core.User.businessName,
                   flex: 1
               },
               {
-                  html: "ФИО пользователя",
+                  html: Core.User.name,
                   flex: 1
               },
               {

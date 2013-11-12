@@ -164,9 +164,7 @@
     <Content Include="scripts\app\controller\Documents.js" />
     <Content Include="scripts\app\controller\User.js" />
     <Content Include="scripts\app\model\MenuItem.js" />
-    <Content Include="scripts\app\model\UserInfo.js" />
     <Content Include="scripts\app\store\MenuItems.js" />
-    <Content Include="scripts\app\store\Stores.js" />
     <Content Include="scripts\app\view\documents\AllDocs.js" />
     <Content Include="scripts\app\view\documents\Index.js" />
     <Content Include="scripts\app\view\documents\Create.js" />
@@ -4717,8 +4715,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\CoreApiController.cs" />
     <Compile Include="Controllers\Api\SiteMenuController.cs" />
-    <Compile Include="Controllers\Api\UserInfoController.cs" />
     <Compile Include="Controllers\Api\UsersController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -4726,6 +4724,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\JSON\Core\CoreApi.cs" />
     <Compile Include="Models\JSON\Core\UserInfo.cs" />
     <Compile Include="Models\MenuModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
