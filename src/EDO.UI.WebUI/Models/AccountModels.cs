@@ -38,6 +38,7 @@ namespace EDO.UI.WebUI.Models
 
     public class RegisterModel
     {
+
         [Required]
         [Display(Name = "Имя пользователя")]
         public string UserName { get; set; }

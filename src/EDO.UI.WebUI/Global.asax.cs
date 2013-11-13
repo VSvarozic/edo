@@ -7,6 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using EDO.UI.WebUI.Models;
+using EDO.UI.WebUI.Models.Binders;
 
 namespace EDO.UI.WebUI
 {
@@ -20,6 +22,8 @@ namespace EDO.UI.WebUI
             RouteConfig.RegisterRoutes(RouteTable.Routes);     
        
             Bootstrapper.Initialise();
+
+            ModelBinders.Binders.Add(typeof(IRegStepViewModel), new RegStepViewModelBinder());
         }
     }
 }

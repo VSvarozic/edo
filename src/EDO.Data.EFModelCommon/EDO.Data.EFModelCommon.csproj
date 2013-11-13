@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201311110947330_RenameDateFieldsMigration.Designer.cs">
       <DependentUpon>201311110947330_RenameDateFieldsMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311131152064_BussinessTypeMigration.cs" />
+    <Compile Include="Migrations\201311131152064_BussinessTypeMigration.Designer.cs">
+      <DependentUpon>201311131152064_BussinessTypeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311131153168_BussinessType2Migration.cs" />
+    <Compile Include="Migrations\201311131153168_BussinessType2Migration.Designer.cs">
+      <DependentUpon>201311131153168_BussinessType2Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EFUserProfilesRepository.cs" />
@@ -98,6 +106,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201311110947330_RenameDateFieldsMigration.resx">
       <DependentUpon>201311110947330_RenameDateFieldsMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311131152064_BussinessTypeMigration.resx">
+      <DependentUpon>201311131152064_BussinessTypeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311131153168_BussinessType2Migration.resx">
+      <DependentUpon>201311131153168_BussinessType2Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
