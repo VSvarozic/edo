@@ -3,22 +3,24 @@ using System.Web.Mvc;
 using System.Runtime.Serialization;
 using System.Web;
 using Microsoft.Web.Mvc;
+using EDO.UI.WebUI.Models.Registration;
 
 // http://stackoverflow.com/questions/6402628/multi-step-registration-process-issues-in-asp-net-mvc-splitted-viewmodels-sing/6403485#6403485
+
+
 namespace EDO.UI.WebUI.Controllers
 {
     public class RegistrationController : Controller
     {
         public ActionResult Index()
         {
-            var wizard = new RegistrationWizard();
-            wizard.Initialize();
+            var wizard = new RegistrationViewModel();
 
             return View(wizard);
         }
 
         [HttpPost]
-        public ActionResult Index([Deserialize]RegistrationWizard wizard, IRegStepViewModel step)
+        public ActionResult Index([Deserialize]RegistrationViewModel wizard, IRegistrationStepVM step)
         {
             wizard.Steps[wizard.CurrentStepIndex] = step;
 
@@ -26,11 +28,11 @@ namespace EDO.UI.WebUI.Controllers
             {
                 if (!string.IsNullOrEmpty(Request["next"]))
                 {
-                    wizard.CurrentStepIndex++;
+                    wizard.GetNextStep();
                 }
                 else if (!string.IsNullOrEmpty(Request["prev"]))
                 {
-                    wizard.CurrentStepIndex--;
+                    wizard.GetPreviousStep();
                 }
                 else
                 {
@@ -46,7 +48,7 @@ namespace EDO.UI.WebUI.Controllers
             {
                 // Even if validation failed we allow the user to
                 // navigate to previous steps
-                wizard.CurrentStepIndex--;
+                wizard.GetPreviousStep();
             }
 
             return View(wizard);

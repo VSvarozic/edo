@@ -42,7 +42,6 @@ namespace EDO.UI.WebUI.Controllers
         // POST: /Account/LogOff
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             WebSecurity.Logout();

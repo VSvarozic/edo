@@ -66,11 +66,12 @@
       <Private>True</Private>
       <HintPath>..\..\lib\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Mvc">
-      <HintPath>..\packages\Mvc2Futures.2.0.50217.0\lib\Microsoft.Web.Mvc.dll</HintPath>
+    <Reference Include="Microsoft.Web.Mvc, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Mvc3Futures.3.0.20105.0\lib\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="MvcContrib">
-      <HintPath>..\packages\MvcContrib.2.0.95.0\lib\MvcContrib.dll</HintPath>
+      <HintPath>..\packages\MvcContrib.Mvc3-ci.3.0.100.0\lib\MvcContrib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\lib\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -107,6 +108,9 @@
     <Reference Include="Unity.WebApi, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Unity.WebAPI.5.0\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.3\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\..\lib\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -153,6 +157,10 @@
     <Content Include="App_Data\SiteMenu.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\icons\large\lock.png" />
     <Content Include="Content\images\icons\medium\close.png" />
     <Content Include="Content\images\icons\medium\login.png" />
@@ -165,6 +173,7 @@
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\logo.gif" />
     <Content Include="Content\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\app\controller\Base.js" />
@@ -187,6 +196,8 @@
     <Content Include="scripts\app\view\Viewport.js" />
     <Content Include="scripts\app\view\_common\TopUserInformer.js" />
     <Content Include="scripts\app\view\_common\UserMenu.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\config\development.js" />
     <Content Include="scripts\config\environment.js" />
     <Content Include="scripts\config\production.js" />
@@ -4716,6 +4727,17 @@
     <Content Include="scripts\extjs421\src\XTemplateParser.js" />
     <Content Include="scripts\extjs421\src\ZIndexManager.js" />
     <Content Include="scripts\html5shiv.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="scripts\jquery\jquery-2.0.3-vsdoc.js" />
+    <Content Include="scripts\jquery\jquery-2.0.3.js" />
+    <Content Include="scripts\jquery\jquery-2.0.3.min.js" />
+    <None Include="scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery\jquery.validate.js" />
+    <Content Include="scripts\jquery\jquery.validate.min.js" />
+    <Content Include="scripts\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -4738,7 +4760,12 @@
     <Compile Include="Models\JSON\Core\CoreApi.cs" />
     <Compile Include="Models\JSON\Core\UserInfo.cs" />
     <Compile Include="Models\MenuModels.cs" />
-    <Compile Include="Models\RegistrationWizard.cs" />
+    <Compile Include="Models\RegistrationViewModel.cs" />
+    <Compile Include="Models\Registration\BusinessBase.cs" />
+    <Compile Include="Models\Registration\ChooseAccountType.cs" />
+    <Compile Include="Models\Registration\IndividualBase.cs" />
+    <Compile Include="Models\Registration\IRegistrationStepVM.cs" />
+    <Compile Include="Models\Registration\PrivateBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\MembershipUtils.cs" />
   </ItemGroup>
@@ -5220,6 +5247,12 @@
     <Content Include="Views\Error\AccessDenied.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\ChooseAccountType.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\IndividualBase.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\BusinessBase.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\PrivateBase.cshtml" />
+    <Content Include="scripts\jquery\jquery-2.0.3.min.map" />
+    <Content Include="Views\Shared\_LayoutTwitter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

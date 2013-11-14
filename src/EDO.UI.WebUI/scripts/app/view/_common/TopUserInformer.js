@@ -40,7 +40,27 @@ Ext.define('EDO.view._common.TopUserInformer', {
                   flex: 1
               },
               {
-                  html: '<a href="/#user">Настройки</a>'
+                  xtype: 'panel',
+                  layout: {
+                      type: 'hbox'
+                  },
+                  frame: false,
+                  border: false,
+                  align: 'stretch',
+                  cls: 'top-userInformerButtonPanel',
+                  items: [
+                      {
+                          cls: 'top-userInformerItem',
+                          html: '<a href="/#user">Настройки</a>'
+                      },
+                      {
+                          xtype: 'tbfill'
+                      },
+                      {
+                          cls: 'top-userInformerItem',
+                          html: '<form action="/Account/LogOff" id="logoutForm" method="POST"><a href="Javascript: document.getElementById(\'logoutForm\').submit()">Выйти</a></form>'
+                      }
+                  ]
               }
             ]
         });

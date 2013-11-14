@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201311131153168_BussinessType2Migration.Designer.cs">
       <DependentUpon>201311131153168_BussinessType2Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311140758173_ChangeBusinessTypeToAccountTypeMigration.cs" />
+    <Compile Include="Migrations\201311140758173_ChangeBusinessTypeToAccountTypeMigration.Designer.cs">
+      <DependentUpon>201311140758173_ChangeBusinessTypeToAccountTypeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311140829527_AddFieldCodeToAccountTypeMigration.cs" />
+    <Compile Include="Migrations\201311140829527_AddFieldCodeToAccountTypeMigration.Designer.cs">
+      <DependentUpon>201311140829527_AddFieldCodeToAccountTypeMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EFUserProfilesRepository.cs" />
@@ -112,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201311131153168_BussinessType2Migration.resx">
       <DependentUpon>201311131153168_BussinessType2Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311140758173_ChangeBusinessTypeToAccountTypeMigration.resx">
+      <DependentUpon>201311140758173_ChangeBusinessTypeToAccountTypeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311140829527_AddFieldCodeToAccountTypeMigration.resx">
+      <DependentUpon>201311140829527_AddFieldCodeToAccountTypeMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

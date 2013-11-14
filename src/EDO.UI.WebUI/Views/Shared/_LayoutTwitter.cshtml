@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <script src="~/scripts/jquery/jquery-2.0.3.min.js"></script>
+    <script src="~/scripts/jquery/jquery.validate.js"></script>
+    <script src="~/scripts/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-1">&nbsp;</div>
+        <div class="col-lg-10">
+            <div class="page-header">
+                <h1>Mega Documents<small>...i'm a genius</small></h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-10">
+                    @RenderBody()
+                </div>
+                <div class="col-lg-1">&nbsp;</div>
+            </div>
+        </div>
+        <div class="col-lg-1">&nbsp;</div>
+    </div>
+</body>
+</html>

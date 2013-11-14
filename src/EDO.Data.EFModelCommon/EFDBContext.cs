@@ -12,6 +12,6 @@ namespace EDO.Data.EFModelCommon
         public DbSet<Office> Offices { get; set; }
         public DbSet<UserPosition> UserPositions { get; set; }
 
-        public DbSet<BussinessType> BussinessTypes { get; set; }
+        public DbSet<AccountType> AccountTypes { get; set; }
     }
 }
