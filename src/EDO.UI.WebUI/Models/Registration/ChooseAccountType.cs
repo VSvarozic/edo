@@ -19,33 +19,34 @@ namespace EDO.UI.WebUI.Models.Registration
     public class ChooseAccountType : IRegistrationStepVM
     {
         [Required]
-        public AccountTypeVM AccountType { get; set; }
+        public string AccountTypeCode { get; set; }
         public List<AccountTypeVM> AccountTypesList { get; set; }
-
-        [Required]
-        public string Smth { get; set; }
-
+        
         public ChooseAccountType()
         {
-            AccountTypesList = new List<AccountTypeVM>();
-            AccountTypesList.Add(new AccountTypeVM
+            AccountTypesList = new List<AccountTypeVM>
             {
-                Id = 1,
-                Title = "Индивидуальный предприниматель",
-                Code = "individual"
-            });
-            AccountTypesList.Add(new AccountTypeVM
-            {
-                Id = 2,
-                Title = "Организация",
-                Code = "business"
-            });
-            AccountTypesList.Add(new AccountTypeVM
-            {
-                Id = 3,
-                Title = "Физическое лицо",
-                Code = "privat"
-            });
+                new AccountTypeVM
+                {
+                    Id = 1,
+                    Title = "Индивидуальный предприниматель",
+                    Code = "individual"
+                },
+                new AccountTypeVM
+                {
+                    Id = 2,
+                    Title = "Организация",
+                    Code = "business"
+                },
+                new AccountTypeVM
+                {
+                    Id = 3,
+                    Title = "Физическое лицо",
+                    Code = "private"
+                }
+            };
+
+            AccountTypeCode = AccountTypesList[0].Code;
         }
     }
 }

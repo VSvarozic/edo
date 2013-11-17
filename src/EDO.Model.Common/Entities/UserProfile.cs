@@ -12,6 +12,6 @@ namespace EDO.Model.Common.Entities
 
         public virtual Business Business { get; set; }
         public virtual Office Office { get; set; }
-        public virtual List<UserPosition> Positions { get; set; }
+        public virtual UserPosition Position { get; set; }
     }
 }

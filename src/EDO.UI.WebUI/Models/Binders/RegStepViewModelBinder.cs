@@ -14,10 +14,5 @@ namespace EDO.UI.WebUI.Models.Binders
 
             return step;
         }
-
-        public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
-        {
-            return base.BindModel(controllerContext, bindingContext);
-        }
     }
 }

@@ -3,10 +3,7 @@
 
 @foreach(var aType in Model.AccountTypesList)
 {
-    @Html.RadioButtonFor(x => x.AccountType, aType.Code)
+    @Html.RadioButtonFor(x => x.AccountTypeCode, aType.Code)
     @Html.Label(aType.Title)
     <br />
 }
-
-<br /><br />
-@Html.EditorFor(x => x.Smth)

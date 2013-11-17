@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EDO.Model.Common.Entities
 {
+    [Table("AccountType")]
     public class AccountType
     {
         [Key]

@@ -9,39 +9,29 @@ namespace EDO.UI.WebUI.Models
     [Serializable]
     public class RegistrationViewModel
     {
-        private ChooseAccountType _firstStep;
-
         public int CurrentStepIndex { get; set; }
         public IList<IRegistrationStepVM> Steps { get; set; }
         public IList<string> StepTitles { get; set; }
-        
+
         public RegistrationViewModel()
         {
             CurrentStepIndex = 0;
             Steps = new List<IRegistrationStepVM>();
             StepTitles = new List<string>();
 
-            _firstStep = (ChooseAccountType)TruncateToFirstStep();
-
-            // Пока руками инициализируем
-            _firstStep.AccountType = new AccountTypeVM
-            {
-                Id = 1,
-                Title = "Индивидуальный Пр",
-                Code = "individual"
-            };
+            TruncateToFirstStep();
         }
 
         public IRegistrationStepVM GetNextStep()
         {
-            if(CurrentStepIndex > 0 && !IsTypeOk(CurrentStepIndex))
+            if (CurrentStepIndex > 0 && !IsTypeOk(CurrentStepIndex))
             {
                 return TruncateToFirstStep();
             }
 
             var nextStep = GetNextStepByAccountType(CurrentStepIndex + 1);
 
-            if(nextStep == null)
+            if (nextStep == null)
             {
                 return Steps.ElementAt(CurrentStepIndex);
             }
@@ -53,14 +43,14 @@ namespace EDO.UI.WebUI.Models
 
         public IRegistrationStepVM GetPreviousStep()
         {
-            if(CurrentStepIndex <= 1) 
+            if (CurrentStepIndex <= 1)
             {
                 CurrentStepIndex = 0;
-                return _firstStep;
+                return GetFirstStep();
             }
 
             var previous = Steps.ElementAtOrDefault(CurrentStepIndex - 1);
-            if(previous == null) 
+            if (previous == null)
             {
                 return TruncateToFirstStep();
             }
@@ -69,12 +59,25 @@ namespace EDO.UI.WebUI.Models
             return previous;
         }
 
+        protected IRegistrationStepVM GetFirstStep()
+        {
+            return Steps.ElementAtOrDefault(0);
+        }
 
+        /**
+         * Сбросим весь визард на первый шаг
+         * Если не было первого шага инициализируем новые
+         * Если был - используем существующий
+         */
         private IRegistrationStepVM TruncateToFirstStep()
         {
             CurrentStepIndex = 0;
+
+            var firstStep = GetFirstStep();
+
             Steps.Clear();
-            Steps.Add(new ChooseAccountType());
+
+            Steps.Add(firstStep ?? new ChooseAccountType());
 
             StepTitles.Clear();
             StepTitles.Add("Выбор типа аккаунта");
@@ -85,12 +88,15 @@ namespace EDO.UI.WebUI.Models
         private bool IsTypeOk(int stepIndex)
         {
             var currentStep = Steps.ElementAtOrDefault(stepIndex);
+            var firstStep = GetFirstStep() as ChooseAccountType;
 
-            switch (_firstStep.AccountType.Code.ToLower())
+            if (firstStep == null) return false;
+
+            switch (firstStep.AccountTypeCode.ToLower())
             {
-                case "individual"   : return currentStep is IIndividualRegStep;
-                case "business"     : return currentStep is IBusinessRegStep;  
-                case "private"      : return currentStep is IPrivateRegStep;   
+                case "individual": return currentStep is IIndividualRegStep;
+                case "business": return currentStep is IBusinessRegStep;
+                case "private": return currentStep is IPrivateRegStep;
             }
 
             return false;
@@ -100,37 +106,61 @@ namespace EDO.UI.WebUI.Models
         {
             // Проверим что след шаг наличиствует и если он соответствует типу - возвращаем его
             var step = Steps.ElementAtOrDefault(stepIndex);
-
-            if(step != null && IsTypeOk(stepIndex))
+            
+            if (IsTypeOk(stepIndex))
             {
-                return step;
+                if (step != null)
+                {
+                    return step;
+                }
             }
-
+            else
+            {
+                TruncateToFirstStep();
+            }
+            
             var stepTitle = "";
 
-            switch (_firstStep.AccountType.Code.ToLower())
+            var firstStep = GetFirstStep() as ChooseAccountType;
+
+            if (firstStep != null)
             {
-                case "individual" :
-                    {
-                        switch(stepIndex)
+                switch (firstStep.AccountTypeCode.ToLower())
+                {
+                    case "individual":
                         {
-                            case 1: step = new IndividualBase(); stepTitle = "Основные данные ИП"; break;
+                            switch (stepIndex)
+                            {
+                                case 1:
+                                    step = new IndividualBase();
+                                    stepTitle = "Основные данные ИП";
+                                    break;
+                            }
                         }
-                    }; break;
-                case "business":
-                    {
-                        switch(stepIndex)
+                        break;
+                    case "business":
                         {
-                            case 1: step = new BusinessBase(); stepTitle = "Основные данные организации";  break;
+                            switch (stepIndex)
+                            {
+                                case 1:
+                                    step = new BusinessBase();
+                                    stepTitle = "Основные данные организации";
+                                    break;
+                            }
                         }
-                    }; break;
-                case "private":
-                    {
-                        switch(stepIndex)
+                        break;
+                    case "private":
                         {
-                            case 1: step = new PrivateBase(); stepTitle = "Основные данные физического лица";  break;
+                            switch (stepIndex)
+                            {
+                                case 1:
+                                    step = new PrivateBase();
+                                    stepTitle = "Основные данные физического лица";
+                                    break;
+                            }
                         }
-                    }; break;
+                        break;
+                }
             }
 
             Steps.Add(step);

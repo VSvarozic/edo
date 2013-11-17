@@ -85,6 +85,18 @@
     <Compile Include="Migrations\201311140829527_AddFieldCodeToAccountTypeMigration.Designer.cs">
       <DependentUpon>201311140829527_AddFieldCodeToAccountTypeMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311151420298_UserBusinessPositionFixMigration.cs" />
+    <Compile Include="Migrations\201311151420298_UserBusinessPositionFixMigration.Designer.cs">
+      <DependentUpon>201311151420298_UserBusinessPositionFixMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311151422087_UserBusinessPositionFix2Migration.cs" />
+    <Compile Include="Migrations\201311151422087_UserBusinessPositionFix2Migration.Designer.cs">
+      <DependentUpon>201311151422087_UserBusinessPositionFix2Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311151423149_UserBusinessPositionFix3Migration.cs" />
+    <Compile Include="Migrations\201311151423149_UserBusinessPositionFix3Migration.Designer.cs">
+      <DependentUpon>201311151423149_UserBusinessPositionFix3Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EFUserProfilesRepository.cs" />
@@ -126,6 +138,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201311140829527_AddFieldCodeToAccountTypeMigration.resx">
       <DependentUpon>201311140829527_AddFieldCodeToAccountTypeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311151420298_UserBusinessPositionFixMigration.resx">
+      <DependentUpon>201311151420298_UserBusinessPositionFixMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311151422087_UserBusinessPositionFix2Migration.resx">
+      <DependentUpon>201311151422087_UserBusinessPositionFix2Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311151423149_UserBusinessPositionFix3Migration.resx">
+      <DependentUpon>201311151423149_UserBusinessPositionFix3Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
