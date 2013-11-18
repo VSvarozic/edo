@@ -24,7 +24,7 @@
     }
 </ol>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Index", "Registration", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <div>
         @Html.ValidationSummary()
@@ -37,21 +37,25 @@
         <div class="panel-heading">@Model.StepTitles[Model.CurrentStepIndex]</div>
         <div class="panel-body">
             @Html.EditorFor(x => currentStep, null, "")
-
-            @if (Model.CurrentStepIndex > 0)
-            {
-                <input type="submit" value="Previous" name="prev" />
-            }
-
-            @if (Model.CurrentStepIndex == 0 || Model.CurrentStepIndex < Model.Steps.Count - 1)
-            {
-                <input type="submit" value="Next" name="next" />
-            }
-            else
-            {
-                <input type="submit" value="Finish" name="finish" />
-            }
         </div>
     </div>
 
+    <div class="form-group">
+        <div class="col-sm-12">      
+
+            @if (Model.CurrentStepIndex == 0 || Model.CurrentStepIndex < Model.Steps.Count - 1)
+            {
+                <input type="submit" value="Next" name="next" class="btn btn-default pull-right" />
+            }
+            else
+            {
+                <input type="submit" value="Finish" name="finish" class="btn btn-success pull-right" />
+            }
+            @if (Model.CurrentStepIndex > 0)
+            {
+                <input type="submit" value="Previous" name="prev" class="btn btn-default pull-right" style="margin-right: 20px;" />
+            }
+
+        </div>
+    </div>
 }

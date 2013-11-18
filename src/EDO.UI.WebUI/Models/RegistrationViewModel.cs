@@ -129,44 +129,44 @@ namespace EDO.UI.WebUI.Models
                 {
                     case "individual":
                         {
-                            switch (stepIndex)
-                            {
-                                case 1:
-                                    step = new IndividualBase();
-                                    stepTitle = "Основные данные ИП";
-                                    break;
-                            }
+                            Steps.Add(new IndividualBase());
+                            StepTitles.Add("Основные данные");
+                            Steps.Add(new IndividualInfo());
+                            StepTitles.Add("Реквизиты и адреса");
+                            Steps.Add(new IndividualIdentity());
+                            StepTitles.Add("Идентификационные данные");
+                            Steps.Add(new IndividualFiles());
+                            StepTitles.Add("Файлы");
                         }
                         break;
                     case "business":
                         {
-                            switch (stepIndex)
-                            {
-                                case 1:
-                                    step = new BusinessBase();
-                                    stepTitle = "Основные данные организации";
-                                    break;
-                            }
+                            Steps.Add(new BusinessBase());
+                            StepTitles.Add("Основные данные");
+                            Steps.Add(new BusinessInfo());
+                            StepTitles.Add("Реквизиты и адреса");
+                            Steps.Add(new BusinessContacts());
+                            StepTitles.Add("Контакты");
+                            Steps.Add(new BusinessFiles());
+                            StepTitles.Add("Файлы");
                         }
                         break;
                     case "private":
                         {
-                            switch (stepIndex)
-                            {
-                                case 1:
-                                    step = new PrivateBase();
-                                    stepTitle = "Основные данные физического лица";
-                                    break;
-                            }
+                            Steps.Add(new PrivateBase());
+                            StepTitles.Add("Основные данные");
+                            Steps.Add(new PrivateInfo());
+                            StepTitles.Add("Реквизиты и адреса");
+                            Steps.Add(new PrivateIdentity());
+                            StepTitles.Add("Идентификационные данные");
+                            Steps.Add(new PrivateFiles());
+                            StepTitles.Add("Файлы");
                         }
                         break;
                 }
             }
 
-            Steps.Add(step);
-            StepTitles.Add(stepTitle);
-
-            return step;
+            return Steps.ElementAtOrDefault(stepIndex);
         }
     }
 }

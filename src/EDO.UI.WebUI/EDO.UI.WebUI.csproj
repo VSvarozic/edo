@@ -4730,6 +4730,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\docs\etp-reglament.pdf" />
     <None Include="scripts\jquery\jquery-2.0.3-vsdoc.js" />
     <Content Include="scripts\jquery\jquery-2.0.3.js" />
     <Content Include="scripts\jquery\jquery-2.0.3.min.js" />
@@ -4762,8 +4763,17 @@
     <Compile Include="Models\MenuModels.cs" />
     <Compile Include="Models\RegistrationViewModel.cs" />
     <Compile Include="Models\Registration\BusinessBase.cs" />
+    <Compile Include="Models\Registration\BusinessContacts.cs" />
+    <Compile Include="Models\Registration\PrivateFiles.cs" />
+    <Compile Include="Models\Registration\IndividualFiles.cs" />
+    <Compile Include="Models\Registration\BusinessFiles.cs" />
+    <Compile Include="Models\Registration\BusinessInfo.cs" />
     <Compile Include="Models\Registration\ChooseAccountType.cs" />
     <Compile Include="Models\Registration\IndividualBase.cs" />
+    <Compile Include="Models\Registration\PrivateIdentity.cs" />
+    <Compile Include="Models\Registration\IndividualIdentity.cs" />
+    <Compile Include="Models\Registration\PrivateInfo.cs" />
+    <Compile Include="Models\Registration\IndividualInfo.cs" />
     <Compile Include="Models\Registration\IRegistrationStepVM.cs" />
     <Compile Include="Models\Registration\PrivateBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -5253,6 +5263,15 @@
     <Content Include="Views\Registration\EditorTemplates\PrivateBase.cshtml" />
     <Content Include="scripts\jquery\jquery-2.0.3.min.map" />
     <Content Include="Views\Shared\_LayoutTwitter.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\BusinessInfo.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\BusinessContacts.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\BusinessFiles.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\IndividualInfo.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\IndividualIdentity.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\IndividualFiles.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\PrivateInfo.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\PrivateIdentity.cshtml" />
+    <Content Include="Views\Registration\EditorTemplates\PrivateFiles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
