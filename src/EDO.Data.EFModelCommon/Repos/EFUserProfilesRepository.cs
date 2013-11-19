@@ -1,4 +1,5 @@
 ﻿using EDO.Model.Common.Abstract;
+using EDO.Model.Common.Abstract.Repositories;
 using EDO.Model.Common.Entities;
 using System.Linq;
 
@@ -6,7 +7,7 @@ namespace EDO.Data.EFModelCommon.Repos
 {
     public class EFUserProfilesRepository : IUserProfilesRepository
     {
-        private EFDBContext _context;
+        private readonly EFDBContext _context;
 
         public EFUserProfilesRepository()
         {

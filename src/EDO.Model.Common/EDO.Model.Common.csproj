@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IUserProfilesRepository.cs" />
+    <Compile Include="Abstract\ICreateNewAccount.cs" />
+    <Compile Include="Abstract\Repositories\IUserProfilesRepository.cs" />
+    <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Business.cs" />
     <Compile Include="Entities\AccountType.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Office.cs" />
+    <Compile Include="Entities\OfficeEssentials.cs" />
     <Compile Include="Entities\UserPosition.cs" />
     <Compile Include="Entities\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

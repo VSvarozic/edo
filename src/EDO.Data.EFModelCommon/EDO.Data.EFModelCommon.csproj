@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EFDBContext.cs" />
+    <Compile Include="Features\EFCreateNewAccount.cs" />
     <Compile Include="Migrations\201310262057038_InitialMigration.cs" />
     <Compile Include="Migrations\201310262057038_InitialMigration.Designer.cs">
       <DependentUpon>201310262057038_InitialMigration.cs</DependentUpon>
@@ -96,6 +97,10 @@
     <Compile Include="Migrations\201311151423149_UserBusinessPositionFix3Migration.cs" />
     <Compile Include="Migrations\201311151423149_UserBusinessPositionFix3Migration.Designer.cs">
       <DependentUpon>201311151423149_UserBusinessPositionFix3Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311191938343_CommonModelAddRegInfoMigration.cs" />
+    <Compile Include="Migrations\201311191938343_CommonModelAddRegInfoMigration.Designer.cs">
+      <DependentUpon>201311191938343_CommonModelAddRegInfoMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201311151423149_UserBusinessPositionFix3Migration.resx">
       <DependentUpon>201311151423149_UserBusinessPositionFix3Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311191938343_CommonModelAddRegInfoMigration.resx">
+      <DependentUpon>201311191938343_CommonModelAddRegInfoMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,17 +15,7 @@ namespace EDO.UI.WebUI.Models.Registration
         public string Phone { get; set; }
         public string MobilePhone { get; set; }
         public string Email { get; set; }
-
-        // Контактное лицо
-        public bool IsEqualDirector { get; set; }
-        public string ContactPosition { get; set; }
-        public string ContactFirstName { get; set; }
-        public string ContactSurname { get; set; }
-        public string ContactLastName { get; set; }
-        public string ContactPhone { get; set; }
-        public string ContactMobilePhone { get; set; }
-        public string ContactEmail { get; set; }
-
+        
         // Идентификационные данные
         public string UserName { get; set; }
         public string Password { get; set; }

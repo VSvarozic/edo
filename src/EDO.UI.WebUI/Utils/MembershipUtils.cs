@@ -12,5 +12,10 @@ namespace EDO.UI.WebUI.Utils
         {
             return WebSecurity.GetUserId(name);
         }
+
+        public static int CreateUser(bool isAdmin = false)
+        {
+            return 0;
+        }
     }
 }

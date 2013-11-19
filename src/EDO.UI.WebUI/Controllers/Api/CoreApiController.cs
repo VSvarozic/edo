@@ -1,4 +1,5 @@
 ﻿using EDO.Model.Common.Abstract;
+using EDO.Model.Common.Abstract.Repositories;
 using EDO.UI.WebUI.Models;
 using EDO.UI.WebUI.Models.JSON.Core;
 using EDO.UI.WebUI.Utils;

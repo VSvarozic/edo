@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EDO.Model.Common.Entities
 {
@@ -11,6 +7,10 @@ namespace EDO.Model.Common.Entities
     public class Business : Entity
     {
         public string Title { get; set; }
+
+        public string ShortTitle { get; set; }
+        public bool IsAccreditated { get; set; }
+        public bool IsInvoiceStatement { get; set; }
 
         public virtual List<Office> Offices { get; set; }
     }
