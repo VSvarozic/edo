@@ -32,7 +32,7 @@ namespace EDO.UI.WebUI.Controllers.Api
             var coreApi = new CoreApi();
 
             var userId = MembershipUtils.GetUserIdByName(principal.Identity.Name);
-            var currUser = _usersRepository.GetProfileById(userId);
+            var currUser = _usersRepository.GetById(userId);
             coreApi.UserInfo = new UserInfo(currUser);
 
 

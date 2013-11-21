@@ -34,7 +34,7 @@ namespace EDO.UI.WebUI.Controllers.Api
         // Получаем конкретного пользователя /api/users/123
         public UserProfile Get(int id)
         {
-            return _usersRepository.GetProfileById(id);
+            return _usersRepository.GetById(id);
         }
     }
 }

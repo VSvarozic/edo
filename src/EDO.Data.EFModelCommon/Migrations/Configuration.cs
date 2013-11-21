@@ -1,6 +1,8 @@
 namespace EDO.Data.EFModelCommon.Migrations
 {
+    using EDO.Model.Common.Entities;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,18 +16,39 @@ namespace EDO.Data.EFModelCommon.Migrations
 
         protected override void Seed(EDO.Data.EFModelCommon.EFDBContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            SeedAccountTypes(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedAccountTypes(EDO.Data.EFModelCommon.EFDBContext context)
+        {
+            List<AccountType> types = new List<AccountType>();
+
+            types.Add(new AccountType
+            {
+                Title = "Индивидуальный предпрениматель",
+                Description = "Индивидуальный предприниматель",
+                Code = "individual"
+            });
+
+            types.Add(new AccountType
+            {
+                Title = "Организация",
+                Description = "Организация",
+                Code = "business"
+            });
+
+            types.Add(new AccountType
+            {
+                Title = "Физическое лицо",
+                Description = "Физическое лицо",
+                Code = "private"
+            });
+
+            types.ForEach(
+                s => context.AccountTypes.AddOrUpdate(p => p.Code, s)
+            );
+
+            context.SaveChanges();
         }
     }
 }

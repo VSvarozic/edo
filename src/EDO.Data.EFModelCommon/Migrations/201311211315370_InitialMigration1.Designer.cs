@@ -7,13 +7,13 @@ namespace EDO.Data.EFModelCommon.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.1-21010")]
-    public sealed partial class RemoveNullableFromDates : IMigrationMetadata
+    public sealed partial class InitialMigration1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveNullableFromDates));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201311110944596_RemoveNullableFromDates"; }
+            get { return "201311211315370_InitialMigration1"; }
         }
         
         string IMigrationMetadata.Source

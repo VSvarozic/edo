@@ -2,9 +2,7 @@
 
 namespace EDO.Model.Common.Abstract.Repositories
 {
-    public interface IUserProfilesRepository
+    public interface IUserProfilesRepository : IGenericRepository<UserProfile>
     {
-        UserProfile GetProfileById(int id);
-
     }
 }

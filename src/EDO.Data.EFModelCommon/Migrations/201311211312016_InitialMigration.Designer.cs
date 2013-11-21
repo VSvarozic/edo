@@ -7,13 +7,13 @@ namespace EDO.Data.EFModelCommon.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.1-21010")]
-    public sealed partial class AddTablesBusOffPos : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTablesBusOffPos));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201311110943188_AddTablesBusOffPos"; }
+            get { return "201311211312016_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICreateNewAccount.cs" />
+    <Compile Include="Abstract\Repositories\IGenericRepository.cs" />
     <Compile Include="Abstract\Repositories\IUserProfilesRepository.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Business.cs" />

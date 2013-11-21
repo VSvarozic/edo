@@ -6,6 +6,8 @@ using EDO.Model.Common.Abstract;
 using EDO.Model.Common.Abstract.Repositories;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
+using System.Data.Entity;
+using EDO.Data.EFModelCommon;
 
 namespace EDO.UI.WebUI
 {
@@ -33,6 +35,7 @@ namespace EDO.UI.WebUI
         public static void RegisterTypes(IUnityContainer container)
         {
             container.RegisterType<IUserProfilesRepository, EFUserProfilesRepository>();
+            container.RegisterType<DbContext, EFDBContext>();
             container.RegisterType<ICreateNewAccount, EFCreateNewAccount>();
         }
     }
