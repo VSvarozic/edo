@@ -33,8 +33,8 @@ namespace EDO.Data.EFModelCommon.Migrations
                         Building = c.String(),
                         Office = c.String(),
                         RawAddress = c.String(),
-                        Created = c.DateTime(nullable: false),
-                        Modified = c.DateTime(nullable: false),
+                        Created = c.DateTime(),
+                        Modified = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -47,8 +47,8 @@ namespace EDO.Data.EFModelCommon.Migrations
                         ShortTitle = c.String(),
                         IsAccreditated = c.Boolean(nullable: false),
                         IsInvoiceStatement = c.Boolean(nullable: false),
-                        Created = c.DateTime(nullable: false),
-                        Modified = c.DateTime(nullable: false),
+                        Created = c.DateTime(),
+                        Modified = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -73,8 +73,8 @@ namespace EDO.Data.EFModelCommon.Migrations
                         OfficeEssentials_CorrespondentAccount = c.String(),
                         OfficeEssentials_BankName = c.String(),
                         OfficeEssentials_BankAddress = c.String(),
-                        Created = c.DateTime(nullable: false),
-                        Modified = c.DateTime(nullable: false),
+                        Created = c.DateTime(),
+                        Modified = c.DateTime(),
                         Address_Id = c.Int(),
                         Business_Id = c.Int(),
                     })
@@ -97,8 +97,8 @@ namespace EDO.Data.EFModelCommon.Migrations
                         MobilePhone = c.String(),
                         Email = c.String(),
                         PassPhrase = c.String(),
-                        Created = c.DateTime(nullable: false),
-                        Modified = c.DateTime(nullable: false),
+                        Created = c.DateTime(),
+                        Modified = c.DateTime(),
                         AccountType_Id = c.Int(),
                         Business_Id = c.Int(),
                         Office_Id = c.Int(),
@@ -120,8 +120,8 @@ namespace EDO.Data.EFModelCommon.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(),
-                        Created = c.DateTime(nullable: false),
-                        Modified = c.DateTime(nullable: false),
+                        Created = c.DateTime(),
+                        Modified = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
             

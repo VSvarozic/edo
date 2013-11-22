@@ -13,5 +13,10 @@ namespace EDO.Model.Common.Entities
         public bool IsInvoiceStatement { get; set; }
 
         public virtual List<Office> Offices { get; set; }
+
+        public Business()
+        {
+            Offices = new List<Office>();
+        }
     }
 }

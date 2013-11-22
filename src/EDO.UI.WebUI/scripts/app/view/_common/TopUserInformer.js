@@ -22,8 +22,6 @@ Ext.define('EDO.view._common.TopUserInformer', {
     initComponent: function() {
         var me = this;
 
-        console.log(Core.User);
-
         Ext.apply(this, {
             
             defaults: {
@@ -32,7 +30,7 @@ Ext.define('EDO.view._common.TopUserInformer', {
             },
             items: [
               {
-                  html: Core.User.businessName,
+                  html: Core.User.business.title,
                   flex: 1
               },
               {

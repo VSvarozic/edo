@@ -19,5 +19,13 @@ namespace EDO.Model.Common.Entities
         public virtual Office Office { get; set; }
         public virtual UserPosition Position { get; set; }
         public virtual AccountType AccountType { get; set; }
+
+        public UserProfile()
+        {
+            Business = new Business();
+            Office = new Office();
+            Position = new UserPosition();
+            AccountType = new AccountType();
+        }
     }
 }

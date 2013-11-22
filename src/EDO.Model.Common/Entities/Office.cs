@@ -30,5 +30,13 @@ namespace EDO.Model.Common.Entities
         public virtual Business Business { get; set; }
 
         public virtual List<UserProfile> Accounts { get; set; }
+
+        public Office()
+        {
+            OfficeEssentials = new OfficeEssentials();
+            Address = new Address();
+            Business = new Business();
+            Accounts = new List<UserProfile>();
+        }
     }
 }

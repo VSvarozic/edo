@@ -50,27 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\CustomDatabaseInitializer.cs" />
+    <Compile Include="EFApplicationUnit.cs" />
     <Compile Include="EFDBContext.cs" />
-    <Compile Include="Features\EFCreateNewAccount.cs" />
-    <Compile Include="Migrations\201311211312016_InitialMigration.cs" />
-    <Compile Include="Migrations\201311211312016_InitialMigration.Designer.cs">
-      <DependentUpon>201311211312016_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311211315370_InitialMigration1.cs" />
-    <Compile Include="Migrations\201311211315370_InitialMigration1.Designer.cs">
-      <DependentUpon>201311211315370_InitialMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311211320245_InitialMigration2.cs" />
-    <Compile Include="Migrations\201311211320245_InitialMigration2.Designer.cs">
-      <DependentUpon>201311211320245_InitialMigration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311211351599_InitialMigration3.cs" />
-    <Compile Include="Migrations\201311211351599_InitialMigration3.Designer.cs">
-      <DependentUpon>201311211351599_InitialMigration3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311211353002_InitialMigration4.cs" />
-    <Compile Include="Migrations\201311211353002_InitialMigration4.Designer.cs">
-      <DependentUpon>201311211353002_InitialMigration4.cs</DependentUpon>
+    <Compile Include="Migrations\201311220558052_InitialMigration.cs" />
+    <Compile Include="Migrations\201311220558052_InitialMigration.Designer.cs">
+      <DependentUpon>201311220558052_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,21 +72,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311211312016_InitialMigration.resx">
-      <DependentUpon>201311211312016_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311220558052_InitialMigration.resx">
+      <DependentUpon>201311220558052_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311211315370_InitialMigration1.resx">
-      <DependentUpon>201311211315370_InitialMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311211320245_InitialMigration2.resx">
-      <DependentUpon>201311211320245_InitialMigration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311211351599_InitialMigration3.resx">
-      <DependentUpon>201311211351599_InitialMigration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311211353002_InitialMigration4.resx">
-      <DependentUpon>201311211353002_InitialMigration4.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

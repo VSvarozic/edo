@@ -17,28 +17,30 @@ namespace EDO.UI.WebUI.Controllers.Api
     [ApiRoledAuthorize]
     public class CoreApiController : ApiController
     {
-        private IUserProfilesRepository _usersRepository;
+        private IApplicationUnit _uow;
 
-        public CoreApiController(IUserProfilesRepository usersRepository)
+        public CoreApiController(IApplicationUnit appUnit)
         {
-            _usersRepository = usersRepository;
+            _uow = appUnit;
         }
 
         public object Get()
         {
             var principal = ControllerContext.RequestContext.Principal;
-            
-
-            var coreApi = new CoreApi();
-
             var userId = MembershipUtils.GetUserIdByName(principal.Identity.Name);
-            var currUser = _usersRepository.GetById(userId);
-            coreApi.UserInfo = new UserInfo(currUser);
 
+            var userProfile = _uow.UserProfiles.GetById(userId);
+            if (userProfile == null)
+            {
+                return new HttpResponseException(Request.CreateResponse(HttpStatusCode.Unauthorized));
+            }            
 
             return new
             {
-                Data = coreApi,
+                Data = new
+                {
+                    User = new UserInfo(userProfile)
+                },
                 Success = true
             };
         }

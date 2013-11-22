@@ -17,6 +17,19 @@ namespace EDO.Data.EFModelCommon.Migrations
         protected override void Seed(EDO.Data.EFModelCommon.EFDBContext context)
         {
             SeedAccountTypes(context);
+            SeedBusiness(context);
+        }
+
+        private void SeedBusiness(EDO.Data.EFModelCommon.EFDBContext context)
+        {
+            List<Business> businessList = new List<Business>();
+
+
+            businessList.ForEach(
+                s => context.Businesses.AddOrUpdate(p => p.Title, s)
+            );
+
+            context.SaveChanges();
         }
 
         private void SeedAccountTypes(EDO.Data.EFModelCommon.EFDBContext context)

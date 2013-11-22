@@ -1,6 +1,5 @@
 using System.Web.Http;
 using System.Web.Mvc;
-using EDO.Data.EFModelCommon.Features;
 using EDO.Data.EFModelCommon.Repos;
 using EDO.Model.Common.Abstract;
 using EDO.Model.Common.Abstract.Repositories;
@@ -34,9 +33,8 @@ namespace EDO.UI.WebUI
 
         public static void RegisterTypes(IUnityContainer container)
         {
-            container.RegisterType<IUserProfilesRepository, EFUserProfilesRepository>();
-            container.RegisterType<DbContext, EFDBContext>();
-            container.RegisterType<ICreateNewAccount, EFCreateNewAccount>();
+            container.RegisterType<IApplicationUnit, EFApplicationUnit>();
+            //container.RegisterType<DbContext, EFDBContext>();
         }
     }
 }

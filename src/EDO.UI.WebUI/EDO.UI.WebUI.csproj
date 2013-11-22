@@ -158,9 +158,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\icons\large\lock.png" />
     <Content Include="Content\images\icons\medium\close.png" />
     <Content Include="Content\images\icons\medium\login.png" />
@@ -197,7 +195,6 @@
     <Content Include="scripts\app\view\_common\TopUserInformer.js" />
     <Content Include="scripts\app\view\_common\UserMenu.js" />
     <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\config\development.js" />
     <Content Include="scripts\config\environment.js" />
     <Content Include="scripts\config\production.js" />
@@ -4731,21 +4728,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\docs\etp-reglament.pdf" />
-    <None Include="scripts\jquery\jquery-2.0.3-vsdoc.js" />
     <Content Include="scripts\jquery\jquery-2.0.3.js" />
-    <Content Include="scripts\jquery\jquery-2.0.3.min.js" />
-    <None Include="scripts\jquery\jquery.validate-vsdoc.js" />
     <Content Include="scripts\jquery\jquery.validate.js" />
-    <Content Include="scripts\jquery\jquery.validate.min.js" />
     <Content Include="scripts\jquery\jquery.validate.unobtrusive.js" />
-    <Content Include="scripts\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CustomGlobalConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\ValidationActionFilter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CoreApiController.cs" />
     <Compile Include="Controllers\Api\SiteMenuController.cs" />
@@ -4753,12 +4750,14 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Filters\ValidationActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Binders\RegStepViewModelBinder.cs" />
-    <Compile Include="Models\JSON\Core\CoreApi.cs" />
+    <Compile Include="Models\JSON\Core\BusinessInfo.cs" />
+    <Compile Include="Models\JSON\Core\OfficeInfo.cs" />
     <Compile Include="Models\JSON\Core\UserInfo.cs" />
     <Compile Include="Models\MenuModels.cs" />
     <Compile Include="Models\RegistrationViewModel.cs" />
@@ -5262,7 +5261,6 @@
     <Content Include="Views\Registration\EditorTemplates\IndividualBase.cshtml" />
     <Content Include="Views\Registration\EditorTemplates\BusinessBase.cshtml" />
     <Content Include="Views\Registration\EditorTemplates\PrivateBase.cshtml" />
-    <Content Include="scripts\jquery\jquery-2.0.3.min.map" />
     <Content Include="Views\Shared\_LayoutTwitter.cshtml" />
     <Content Include="Views\Registration\EditorTemplates\BusinessInfo.cshtml" />
     <Content Include="Views\Registration\EditorTemplates\BusinessContacts.cshtml" />

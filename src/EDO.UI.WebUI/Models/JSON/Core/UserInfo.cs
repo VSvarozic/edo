@@ -9,7 +9,7 @@ using System.Web;
 namespace EDO.UI.WebUI.Models.JSON.Core
 {
 
-    [DataContract(Name = "UserInfo", Namespace = "")]
+    [DataContract(Name = "User", Namespace = "")]
     public class UserInfo
     {
         private UserProfile _profile;
@@ -18,10 +18,14 @@ namespace EDO.UI.WebUI.Models.JSON.Core
         public int UserId { get; set; }
         [DataMember(EmitDefaultValue = false)]
         public string Name { get; set; }
+
+
         [DataMember(EmitDefaultValue = false)]
-        public string BusinessName { get; set; }
+        public BusinessInfo Business { get; set; }
         [DataMember(EmitDefaultValue = false)]
-        public string OfficeName { get; set; }
+        public OfficeInfo Office { get; set; }
+
+
 
         public UserInfo(UserProfile profile)
         {
@@ -30,14 +34,17 @@ namespace EDO.UI.WebUI.Models.JSON.Core
             UserId = _profile.Id;
             Name = _profile.UserName;
 
+            Business = new BusinessInfo();
+            Office = new OfficeInfo();
+
             if (_profile.Business != null)
-            {
-                BusinessName = _profile.Business.Title;
+            {                
+                Business.Title = _profile.Business.Title;
             }
 
             if (_profile.Office != null)
             {
-                OfficeName = _profile.Office.Title;
+                Office.Title = _profile.Office.Title;
             }
         }
     }

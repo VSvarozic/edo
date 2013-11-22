@@ -89,7 +89,7 @@ Ext.onReady(function () {
             success: function (response) {
                 var obj = Ext.decode(response.responseText)
                 if (obj.data) {
-                    Core.User = obj.data.userInfo;
+                    Core.User = obj.data.user;
                 }
                 
                 Core.startApplication();

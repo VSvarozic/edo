@@ -17,11 +17,11 @@ namespace EDO.UI.WebUI.Controllers.Api
     [ApiRoledAuthorize]
     public class UsersController : ApiController
     {
-        private IUserProfilesRepository _usersRepository;
+        private IApplicationUnit _uow;
 
-        public UsersController(IUserProfilesRepository userRepository)
+        public UsersController(IApplicationUnit appUnit)
         {
-            _usersRepository = userRepository;
+            _uow = appUnit;
         }
 
         // Получаем всех пользователей /api/users
@@ -34,7 +34,7 @@ namespace EDO.UI.WebUI.Controllers.Api
         // Получаем конкретного пользователя /api/users/123
         public UserProfile Get(int id)
         {
-            return _usersRepository.GetById(id);
+            return _uow.UserProfiles.GetById(id);
         }
     }
 }
